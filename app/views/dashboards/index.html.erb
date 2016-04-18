@@ -1,6 +1,16 @@
-<h3>Test Data</h3>
+<h1><%= @user_name %>'s Sample Data</h1>
+
 <hr>
-<h4>Devices</h4>
-<p><%= @devices %></p>
-<h4>Daily Summary</h4>
-<p><%= @daily_summary %></p>
+
+<h2>Devices:</h2>
+<% @devices.each do |device| %>
+  <p><strong><%= device[:device_version] %></strong></p>
+  <p>Battery Level: <%= device[:battery] %></p>
+<% end %>
+
+<hr>
+
+<h2>Daily Goals:</h2>
+<% @daily_summary[:goals].each do |k, v| %>
+  <p><strong><%= k.to_s.titleize %>:</strong> <%= v %></p>
+<% end%>
