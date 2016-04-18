@@ -11,7 +11,7 @@ gem 'turbolinks'
 
 gem 'devise'
 gem 'omniauth-fitbit-oauth2'
-gem 'fitbyte', path: '/Users/zoran/dev/fitbyte'
+gem 'fitbyte'
 
 group :development, :test do
   gem 'byebug'
