@@ -6,9 +6,9 @@ An example Rails app using the Fitbyte API wrapper.
 
 To interact with Fitbit's API, you must register your application at [dev.fitbit.com](https://dev.fitbit.com/apps). During registration, make sure the value for the *Callback URL* is the following:
 
-    http://localhost:3000/users/auth/fitbit_oauth2/callback
+    http://localhost:3000/users/auth/fitbit/callback
 
-After registering, you should have access to **CLIENT ID**, **CLIENT SECRET**, and **REDIRECT URI (Callback URL)** values for instantiating a `Fitbyte::Client` object in your app.
+After registering, you should have access to the **CLIENT ID** and **CLIENT SECRET** values for instantiating a `Fitbyte::Client` object in your app.
 
 ### Getting Started
 

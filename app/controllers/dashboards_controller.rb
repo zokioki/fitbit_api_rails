@@ -12,6 +12,6 @@ class DashboardsController < ApplicationController
 
   def update_refresh_token
     new_refresh_token = current_user.fitbit_client.token.refresh_token
-    current_user.identity_for("fitbit_oauth2").update_attribute(:refresh_token, new_refresh_token)
+    current_user.identity_for("fitbit").update_attribute(:refresh_token, new_refresh_token)
   end
 end

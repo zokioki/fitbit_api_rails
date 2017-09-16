@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  devise :omniauthable, :omniauth_providers => [:fitbit_oauth2]
+  devise :omniauthable, :omniauth_providers => [:fitbit]
 
   has_many :identities, dependent: :destroy
 
@@ -30,13 +30,12 @@ class User < ActiveRecord::Base
   end
 
   def fitbit_client
-    fitbit_identity = identity_for("fitbit_oauth2")
+    fitbit_identity = identity_for("fitbit")
 
     Fitbyte::Client.new(
       refresh_token: fitbit_identity.refresh_token,
       client_id: Rails.application.secrets.fitbyte_client_id,
-      client_secret: Rails.application.secrets.fitbyte_client_secret,
-      redirect_uri: "http://localhost:3000/users/auth/fitbit_oauth2/callback",
+      client_secret: Rails.application.secrets.fitbyte_client_secret
     )
   end
 end
