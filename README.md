@@ -8,7 +8,7 @@ To interact with Fitbit's API, you must register your application at [dev.fitbit
 
     http://localhost:3000/users/auth/fitbit/callback
 
-After registering, you should have access to the **CLIENT ID** and **CLIENT SECRET** values for instantiating a `Fitbyte::Client` object in your app.
+After registering, you should have access to the **CLIENT ID** and **CLIENT SECRET** values to place into `config/secrets.yml`.
 
 ### Getting Started
 
