@@ -32,10 +32,10 @@ class User < ActiveRecord::Base
   def fitbit_client
     fitbit_identity = identity_for("fitbit")
 
-    Fitbyte::Client.new(
+    FitbitAPI::Client.new(
       refresh_token: fitbit_identity.refresh_token,
-      client_id: Rails.application.secrets.fitbyte_client_id,
-      client_secret: Rails.application.secrets.fitbyte_client_secret
+      client_id: Rails.application.secrets.fitbit_api_client_id,
+      client_secret: Rails.application.secrets.fitbit_api_client_secret
     )
   end
 end
