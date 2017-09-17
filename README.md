@@ -1,6 +1,6 @@
 # FitbitAPI in Rails
 
-An example Rails app using the FitbitAPI API wrapper.
+An example Rails app using the FitbitAPI gem.
 
 ### Before Starting
 
