@@ -261,5 +261,10 @@ Devise.setup do |config|
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
-  config.omniauth :fitbit, Rails.application.secrets.fitbit_api_client_id, Rails.application.secrets.fitbit_api_client_secret, scope: Rails.application.secrets.fitbit_api_scope, redirect_uri: "http://localhost:3000/users/auth/fitbit/callback", expires_in: 604800
+  config.omniauth :fitbit,
+                  Rails.application.secrets.fitbit_api_client_id,
+                  Rails.application.secrets.fitbit_api_client_secret,
+                  scope: Rails.application.secrets.fitbit_api_scope,
+                  redirect_uri: 'http://localhost:3000/users/auth/fitbit/callback',
+                  expires_in: 604_800
 end

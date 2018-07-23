@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   before_action :authenticate_user!
-  after_action  :update_refresh_token
+  before_action :update_token_data
 
   def index
     @user_name = current_user.fitbit_client.profile[:user][:display_name]
@@ -10,8 +10,12 @@ class DashboardsController < ApplicationController
 
   private
 
-  def update_refresh_token
-    new_refresh_token = current_user.fitbit_client.token.refresh_token
-    current_user.identity_for("fitbit").update_attribute(:refresh_token, new_refresh_token)
+  def update_token_data
+    token_data = current_user.fitbit_client.token
+    current_user.identity_for("fitbit").update_attributes(
+      access_token: token_data.token,
+      refresh_token: token_data.refresh_token,
+      expires_at: token_data.expires_at
+    )
   end
 end

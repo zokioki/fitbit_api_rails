@@ -55,7 +55,7 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
-    fitbit_api (0.8.3)
+    fitbit_api (0.9.0)
       oauth2 (~> 1.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -175,7 +175,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   devise
-  fitbit_api
+  fitbit_api (= 0.9.0)
   jquery-rails
   omniauth-fitbit
   rails (= 4.2.10)
