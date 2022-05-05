@@ -38,7 +38,18 @@ class User < ActiveRecord::Base
       access_token: fitbit_identity.access_token,
       refresh_token: fitbit_identity.refresh_token,
       expires_at: fitbit_identity.expires_at,
-      user_id: fitbit_identity.uid
+      user_id: fitbit_identity.uid,
+      on_token_refresh: method(:handle_token_refresh)
+    )
+  end
+
+  private
+
+  def handle_token_refresh(token)
+    identity_for("fitbit").update!(
+      access_token: token.token,
+      refresh_token: token.refresh_token,
+      expires_at: token.expires_at
     )
   end
 end
