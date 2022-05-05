@@ -30,9 +30,11 @@ class User < ActiveRecord::Base
   end
 
   def fitbit_client
+    return @fitbit_client if defined?(@fitbit_client)
+
     fitbit_identity = identity_for("fitbit")
 
-    FitbitAPI::Client.new(
+    @fitbit_client = FitbitAPI::Client.new(
       access_token: fitbit_identity.access_token,
       refresh_token: fitbit_identity.refresh_token,
       expires_at: fitbit_identity.expires_at,
