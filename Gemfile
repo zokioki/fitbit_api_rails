@@ -10,7 +10,7 @@ gem 'turbolinks'
 
 gem 'devise'
 gem 'omniauth-fitbit'
-gem 'fitbit_api', '0.10.2'
+gem 'fitbit_api', '0.11.0'
 
 group :development, :test do
   gem 'byebug'
