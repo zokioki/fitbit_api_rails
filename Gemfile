@@ -32,10 +32,15 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Authentication based on Warden
 gem "devise", "~> 4.9.3"
+# OmniAuth strategy for Fitbit
 gem "omniauth-fitbit", "~> 2.0.0"
+# CSRF protection for OmniAuth request endpoint (see https://github.com/decidim/decidim/issues/9048)
 gem "omniauth-rails_csrf_protection", "~> 1.0.1"
+# Swappable back-end for JSON handling (needed for omniauth-fitbit)
 gem "multi_json", "~> 1.15.0"
+# A Ruby interface to the Fitbit API
 gem "fitbit_api", "1.0.0"
 
 group :development, :test do
