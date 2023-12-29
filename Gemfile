@@ -35,7 +35,8 @@ gem "bootsnap", require: false
 gem "devise"
 gem "omniauth-fitbit"
 gem "omniauth-rails_csrf_protection"
-gem "fitbit_api", "0.12.1"
+gem "multi_json"
+gem "fitbit_api", "1.0.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
