@@ -32,10 +32,10 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "devise"
-gem "omniauth-fitbit"
-gem "omniauth-rails_csrf_protection"
-gem "multi_json"
+gem "devise", "~> 4.9.3"
+gem "omniauth-fitbit", "~> 2.0.0"
+gem "omniauth-rails_csrf_protection", "~> 1.0.1"
+gem "multi_json", "~> 1.15.0"
 gem "fitbit_api", "1.0.0"
 
 group :development, :test do

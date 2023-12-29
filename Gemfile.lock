@@ -294,12 +294,12 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  devise
+  devise (~> 4.9.3)
   fitbit_api (= 1.0.0)
   importmap-rails
-  multi_json
-  omniauth-fitbit
-  omniauth-rails_csrf_protection
+  multi_json (~> 1.15.0)
+  omniauth-fitbit (~> 2.0.0)
+  omniauth-rails_csrf_protection (~> 1.0.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
   redis (>= 4.0.1)
