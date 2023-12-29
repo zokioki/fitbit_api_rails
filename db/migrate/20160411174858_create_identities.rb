@@ -1,4 +1,4 @@
-class CreateIdentities < ActiveRecord::Migration
+class CreateIdentities < ActiveRecord::Migration[7.1]
   def change
     create_table :identities do |t|
       t.string  :provider

@@ -1,6 +1,6 @@
 <div style="margin-bottom: 4rem">
   <div style="float: left"><strong>FitbitAPI Rails</strong></div>
-  <div style="float: right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></div>
+  <div style="float: right"><%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %></div>
   <div style="clear: both"></div>
 </div>
 
