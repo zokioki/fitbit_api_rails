@@ -1,0 +1,10 @@
+<% if flash.any? %>
+  <div class="flash-messages">
+    <% flash.each do |type, message| %>
+      <div class="flash-message <%= type %>">
+        <span><%= message %></span>
+        <span class="flash-message-close" onclick="this.parentNode.parentNode.removeChild(this.parentNode)">&times;</span>
+      </div>
+    <% end %>
+  </div>
+<% end %>

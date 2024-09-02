@@ -1,22 +1,44 @@
-<div style="margin-bottom: 4rem">
-  <div style="float: left"><strong>FitbitAPI Rails</strong></div>
-  <div style="float: right"><%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %></div>
-  <div style="clear: both"></div>
+<div class="dashboard">
+  <div class="dashboard-navbar">
+    <strong>FitbitAPI Rails</strong>
+    <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
+  </div>
+
+  <div class="dashboard-header">
+    <h1><%= time_based_greeting(@user_profile[:timezone]) %>, <%= @user_profile[:first_name] %></h1>
+    <strong>Below you'll find a basic overview of data pulled from your Fitbit account.</strong>
+  </div>
+
+  <div class="dashboard-panels">
+    <div class="dashboard-panel">
+      <div class="panel-header">Devices</div>
+
+      <% @devices.each do |device| %>
+        <p><strong><%= device[:device_version] %></strong></p>
+        <p>Battery Level: <%= device[:battery] %></p>
+      <% end %>
+    </div>
+
+    <div class="dashboard-panel">
+      <div class="panel-header">Daily Goals</div>
+
+      <% @daily_summary[:goals].each do |k, v| %>
+        <p><strong><%= k.to_s.titleize %>:</strong> <%= number_with_delimiter(v) %></p>
+      <% end%>
+    </div>
+
+    <div class="dashboard-panel">
+      <div class="panel-header">Top Badges</div>
+
+      <div class="top-badges">
+        <% @user_profile[:top_badges].first(5).each do |badge| %>
+          <div class="badge">
+            <%= image_tag badge[:image100px], draggable: false, title: badge[:marketing_description] %>
+            <div><strong><%= badge[:short_name] %></strong></div>
+            <div><%= badge[:short_description] %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<h1><%= @user_name %>'s Fitbit Dashboard</h1>
-
-<hr>
-
-<h2>Devices:</h2>
-<% @devices.each do |device| %>
-  <p><strong><%= device[:device_version] %></strong></p>
-  <p>Battery Level: <%= device[:battery] %></p>
-<% end %>
-
-<hr>
-
-<h2>Daily Goals:</h2>
-<% @daily_summary[:goals].each do |k, v| %>
-  <p><strong><%= k.to_s.titleize %>:</strong> <%= number_with_delimiter(v) %></p>
-<% end%>
