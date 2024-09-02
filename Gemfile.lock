@@ -114,7 +114,7 @@ GEM
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
-    fitbit_api (1.0.0)
+    fitbit_api (1.1.0)
       oauth2 (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -295,7 +295,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9.3)
-  fitbit_api (= 1.0.0)
+  fitbit_api (= 1.1.0)
   importmap-rails
   multi_json (~> 1.15.0)
   omniauth-fitbit (~> 2.0.0)

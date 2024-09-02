@@ -41,7 +41,7 @@ gem "omniauth-rails_csrf_protection", "~> 1.0.1"
 # Swappable back-end for JSON handling (needed for omniauth-fitbit)
 gem "multi_json", "~> 1.15.0"
 # A Ruby interface to the Fitbit API
-gem "fitbit_api", "1.0.0"
+gem "fitbit_api", "1.1.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
