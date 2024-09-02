@@ -26,6 +26,7 @@
 
 .dashboard-panels {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -46,6 +47,7 @@
 
 .top-badges {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -57,4 +59,10 @@
 
 .top-badges .badge img {
   margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboard-panel {
+    width: 100%;
+  }
 }
