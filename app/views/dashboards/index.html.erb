@@ -18,5 +18,5 @@
 
 <h2>Daily Goals:</h2>
 <% @daily_summary[:goals].each do |k, v| %>
-  <p><strong><%= k.to_s.titleize %>:</strong> <%= v %></p>
+  <p><strong><%= k.to_s.titleize %>:</strong> <%= number_with_delimiter(v) %></p>
 <% end%>
