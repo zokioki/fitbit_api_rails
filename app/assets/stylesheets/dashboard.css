@@ -11,13 +11,17 @@
 }
 
 .dashboard-navbar .gem-badge {
-  background-color: lightgray;
+  background-color: #dfdfdf;
   color: inherit;
   font-size: 0.8rem;
   text-decoration: none;
   border-radius: 3px;
   padding: 4px 8px;
   margin-left: 16px;
+}
+
+.dashboard-navbar .gem-badge:hover {
+  background-color: lightgray;
 }
 
 .dashboard-header {
