@@ -274,9 +274,9 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.omniauth :fitbit,
-                  Rails.application.secrets.fitbit_api_client_id,
-                  Rails.application.secrets.fitbit_api_client_secret,
-                  scope: Rails.application.secrets.fitbit_api_scope,
+                  ENV.fetch("FITBIT_API_CLIENT_ID"),
+                  ENV.fetch("FITBIT_API_CLIENT_SECRET"),
+                  scope: ENV.fetch("FITBIT_API_SCOPE"),
                   redirect_uri: 'http://localhost:3000/users/auth/fitbit/callback',
                   expires_in: 604_800
 

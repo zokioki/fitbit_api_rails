@@ -22,6 +22,18 @@ FileUtils.chdir APP_ROOT do
   #   FileUtils.cp "config/database.yml.sample", "config/database.yml"
   # end
 
+  unless File.exist?(".env.development")
+    puts "\n== Creating dotenv file =="
+    File.write(
+      ".env.development",
+      <<~TEXT
+        FITBIT_API_CLIENT_ID="your_client_id"
+        FITBIT_API_CLIENT_SECRET="your_client_secret"
+        FITBIT_API_SCOPE="activity nutrition sleep heartrate weight profile settings"
+      TEXT
+    )
+  end
+
   puts "\n== Preparing database =="
   system! "bin/rails db:prepare"
 
